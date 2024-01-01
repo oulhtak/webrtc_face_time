@@ -12,7 +12,7 @@ const peer = new Peeras({
     $remoteStream.className = "";
     $info.classList.add("d-none");
     $controlBtns.classList.remove("d-none");
-    START_TIMER();
+    startTimer();
     window.localStreams = peer.localStreams;
     window.remoteStreams = streams;
   },
@@ -119,7 +119,7 @@ export async function startApp(localStream) {
 }
 
 var TIMER_POOSED = false;
-function START_TIMER() {
+function startTimer() {
   var seconds = 0;
   var munites = 0;
   var hours = 0;

@@ -124,13 +124,13 @@
           return startApp(stream);
         }
 
-        return showError("No Tracks founds");
+        return displayError("No Tracks founds");
       })
       .catch((err) => {
-        showError(err.toString());
+        displayError(err.toString());
       });
 
-    function showError(error) {
+    function displayError(error) {
       $info.innerHTML = `<img src="/logo.svg" alt="">
        <div class="alert alert-danger alert-dismissible fade show">
         ${error}
