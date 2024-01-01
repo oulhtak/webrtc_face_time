@@ -45,7 +45,6 @@ export async function startApp(localStream) {
       }
       const offer = await peer.initialize({ localStreams: [localStream] });
       await createRoom(id, offer, async (answer) => {
-        console.log("call type = ", peer.checkCallOrAnswerType(answer));
         peer.verify(answer);
       });
       e.target.innerHTML = `
@@ -56,7 +55,6 @@ export async function startApp(localStream) {
       return;
     }
     joinRoom(id, async (offer) => {
-      console.log("call type = ", peer.checkCallOrAnswerType(offer));
       const answer = await peer.answer({
         offer: offer,
         localStreams: [localStream],
